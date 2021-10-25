@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab11.View.Operations">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Valor 1" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
+                <Editor Text="{Binding Valor1}" Keyboard="Numeric" ></Editor>
+                <Label Text="Valor 2" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
+                <Editor Text="{Binding Valor2}" Keyboard="Numeric" ></Editor>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Sumar" WidthRequest="140" Command="{Binding Sumar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
+                <Label Text="{Binding ResultSuma}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Restar" WidthRequest="140" Command="{Binding Restar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
+                <Label Text="{Binding ResultResta}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Multiplicar" WidthRequest="140" Command="{Binding Multiplicar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
+                <Label Text="{Binding ResultMultiplicar}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Dividir"  WidthRequest="140" Command="{Binding Dividir}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
+                <Label Text="{Binding ResultDividir}" FontSize="18"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
