@@ -1,30 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:Lab11.ViewModel" x:DataType="viewmodel:OperationsViewModel"
              x:Class="Lab11.View.Operations">
+    <Page.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            
+            <Setter Property="WidthRequest" Value="140"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="TextColor" Value="#f5af19"/>
+            <Setter Property="BorderColor" Value="#f5af19"/>
+            <Setter Property="Background" Value="#f12711"/>
+        </Style>
+        <Style x:Key="MyLabelValor" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="MyLabelResult" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+          
+        </Style>
+    </Page.Resources>
     <ContentPage.Content>
         <StackLayout Padding="20">
             <StackLayout Orientation="Vertical">
-                <Label Text="Valor 1" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="Valor 1" Style="{StaticResource MyLabelValor}"/>
                 <Editor Text="{Binding Valor1}" Keyboard="Numeric" ></Editor>
-                <Label Text="Valor 2" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="Valor 2" Style="{StaticResource MyLabelValor}"/>
                 <Editor Text="{Binding Valor2}" Keyboard="Numeric" ></Editor>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Sumar" WidthRequest="140" Command="{Binding Sumar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
-                <Label Text="{Binding ResultSuma}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Sumar"  Command="{Binding Sumar}" Style="{StaticResource MyButtonStyle}" />
+                <Label Text="{Binding ResultSuma}" Style="{DynamicResource MyLabelResult}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Restar" WidthRequest="140" Command="{Binding Restar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
-                <Label Text="{Binding ResultResta}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Restar" Command="{Binding Restar}" Style="{StaticResource MyButtonStyle}" />
+                <Label Text="{Binding ResultResta}" Style="{DynamicResource MyLabelResult}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Multiplicar" WidthRequest="140" Command="{Binding Multiplicar}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
-                <Label Text="{Binding ResultMultiplicar}" FontSize="18"  FontAttributes="Bold"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Multiplicar" Command="{Binding Multiplicar}" Style="{StaticResource MyButtonStyle}"/>
+                <Label Text="{Binding ResultMultiplicar}" Style="{DynamicResource MyLabelResult}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Dividir"  WidthRequest="140" Command="{Binding Dividir}" CornerRadius="4" BorderColor="#f5af19" Background="#f12711" TextColor="#f5af19"/>
-                <Label Text="{Binding ResultDividir}" FontSize="18"  FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Dividir" Command="{Binding Dividir}" Style="{StaticResource MyButtonStyle}" />
+                <Label Text="{Binding ResultDividir}" Style="{DynamicResource MyLabelResult}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
