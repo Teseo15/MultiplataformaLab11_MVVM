@@ -114,7 +114,16 @@ namespace Lab11.ViewModel
             });
             Dividir = new Command(() =>
             {
-                ResultDividir = Valor1 / Valor2;
+                
+               
+                try
+                {
+                    ResultDividir = Valor1 / Valor2;
+                }
+                catch (DivideByZeroException)
+                {
+                    ResultDividir = 0;
+                }
             });
         }
         #endregion

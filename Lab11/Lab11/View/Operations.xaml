@@ -4,33 +4,35 @@
              xmlns:viewmodel="clr-namespace:Lab11.ViewModel" x:DataType="viewmodel:OperationsViewModel"
              x:Class="Lab11.View.Operations">
     <Page.Resources>
+        
         <Style x:Key="MyButtonStyle" TargetType="Button">
-            
             <Setter Property="WidthRequest" Value="140"/>
             <Setter Property="CornerRadius" Value="4"/>
             <Setter Property="TextColor" Value="#f5af19"/>
             <Setter Property="BorderColor" Value="#f5af19"/>
             <Setter Property="Background" Value="#f12711"/>
         </Style>
-        <Style x:Key="MyLabelValor" TargetType="Label">
+        
+        <Style x:Key="MyLabelBase" TargetType="Label">
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-            <Setter Property="TextDecorations" Value="Underline"/>
-            <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontAttributes" Value="Bold"/>
         </Style>
-        <Style x:Key="MyLabelResult" TargetType="Label">
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+
+        <Style x:Key="MyLabelValor" BasedOn="{StaticResource MyLabelBase}" TargetType="Label" >
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style x:Key="MyLabelResult" BasedOn="{StaticResource MyLabelBase}" TargetType="Label">
             <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
-          
         </Style>
     </Page.Resources>
     <ContentPage.Content>
         <StackLayout Padding="20">
             <StackLayout Orientation="Vertical">
                 <Label Text="Valor 1" Style="{StaticResource MyLabelValor}"/>
-                <Editor Text="{Binding Valor1}" Keyboard="Numeric" ></Editor>
+                <Editor Text="{Binding Valor1}" Keyboard="Numeric"  ></Editor>
                 <Label Text="Valor 2" Style="{StaticResource MyLabelValor}"/>
                 <Editor Text="{Binding Valor2}" Keyboard="Numeric" ></Editor>
             </StackLayout>
